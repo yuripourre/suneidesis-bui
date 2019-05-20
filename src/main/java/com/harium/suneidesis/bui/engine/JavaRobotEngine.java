@@ -3,21 +3,44 @@ package com.harium.suneidesis.bui.engine;
 import com.harium.suneidesis.bui.input.Input;
 
 import java.awt.*;
+import java.awt.event.InputEvent;
 import java.io.IOException;
+
+import static com.harium.suneidesis.bui.input.InputKey.MOUSE_MIDDLE;
+import static com.harium.suneidesis.bui.input.InputKey.MOUSE_RIGHT;
 
 public class JavaRobotEngine implements BUIEngine {
 
-    private boolean hotkeyPrefered = true;
+    int width, height;
+    int x, y;
 
     Process pr;
     Robot robot;
 
     public JavaRobotEngine() {
+        init();
+        initRobot();
+    }
+
+    private void initRobot() {
         try {
             robot = new Robot();
+            setup(robot);
         } catch (AWTException e) {
             e.printStackTrace();
         }
+    }
+
+    private void init() {
+        Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
+        width = screenSize.width;
+        height = screenSize.height;
+    }
+
+    private static void setup(Robot robot) {
+        robot.setAutoWaitForIdle(true);
+        robot.delay(150);
+        robot.waitForIdle();
     }
 
     public void execute(Input input) {
@@ -34,12 +57,37 @@ public class JavaRobotEngine implements BUIEngine {
                 robot.delay((int) input.delay());
                 break;
             case MOUSE_MOVE:
-                robot.mouseMove(input.x(), input.y());
+                x = input.x();
+                y = input.y();
+                robot.mouseMove(x, y);
+                break;
+            case MOUSE_MOVE_RELATIVE:
+                x += input.x();
+                y += input.y();
+                robot.mouseMove(x, y);
+                break;
+            case MOUSE_PRESSED:
+                int pkey = mouseKey(input.key());
+                robot.mousePress(pkey);
+                break;
+            case MOUSE_RELEASED:
+                int rkey = mouseKey(input.key());
+                robot.mouseRelease(rkey);
                 break;
             case RUN_COMMAND:
                 execute(input.command());
                 break;
         }
+    }
+
+    private int mouseKey(int key) {
+        if (key == MOUSE_RIGHT.code()) {
+            return InputEvent.BUTTON2_MASK;
+        } else if (key == MOUSE_MIDDLE.code()) {
+            return InputEvent.BUTTON3_MASK;
+        }
+
+        return InputEvent.BUTTON1_MASK;
     }
 
     private void execute(final String command) {
@@ -62,4 +110,21 @@ public class JavaRobotEngine implements BUIEngine {
         pr.destroy();
     }
 
+    public int getX() {
+        return x;
+    }
+
+    public int getY() {
+        return y;
+    }
+
+    @Override
+    public int getWidth() {
+        return width;
+    }
+
+    @Override
+    public int getHeight() {
+        return height;
+    }
 }

@@ -10,6 +10,10 @@ public enum InputKey {
     ALT("alt", KeyEvent.VK_ALT),
     CTRL("ctrl", KeyEvent.VK_CONTROL),
     SHIFT("shift", KeyEvent.VK_SHIFT),
+    MOUSE_LEFT("mouse left", 10001),
+    MOUSE_RIGHT("mouse right", 10002),
+    MOUSE_MIDDLE("mouse middle", 10003),
+    ENTER("enter", KeyEvent.VK_ENTER),
     KEY_1("1", KeyEvent.VK_1),
     KEY_2("2", KeyEvent.VK_2),
     KEY_3("3", KeyEvent.VK_3),
@@ -50,5 +54,9 @@ public enum InputKey {
 
         System.err.println("Key: " + keyLabel + " not found.");
         return null;
+    }
+
+    public int code() {
+        return code;
     }
 }

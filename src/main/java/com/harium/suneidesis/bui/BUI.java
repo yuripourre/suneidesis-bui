@@ -16,4 +16,8 @@ public interface BUI {
     void open();
 
     void close();
+
+    int getX();
+
+    int getY();
 }

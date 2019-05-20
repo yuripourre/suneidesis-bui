@@ -35,6 +35,9 @@ public abstract class BaseBUI implements BUI {
     }
 
     public void execute(Action action) {
+        if (action == null || action.inputs() == null) {
+            return;
+        }
         List<Input> inputs = action.inputs();
         for (Input input : inputs) {
             engine.execute(input);
@@ -52,5 +55,13 @@ public abstract class BaseBUI implements BUI {
                 execute(command.action());
             }
         }
+    }
+
+    public int getX() {
+        return engine.getX();
+    }
+
+    public int getY() {
+        return engine.getY();
     }
 }

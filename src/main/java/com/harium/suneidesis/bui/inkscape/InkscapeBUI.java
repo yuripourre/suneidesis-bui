@@ -18,6 +18,7 @@ public class InkscapeBUI extends VectorBUI {
     private void init() {
         initOpen();
         initZoom();
+        initTools();
     }
 
     private void initOpen() {
@@ -33,7 +34,15 @@ public class InkscapeBUI extends VectorBUI {
         add(new Command(ZOOM_RESET).command(zoomMode).action(new Action().type("1")));
         add(new Command(ZOOM_FIT_DRAWING).command(zoomMode).action(new Action().type("4")));
         add(new Command(ZOOM_FIT_PAGE).command(zoomMode).action(new Action().type("5")));
+    }
+
+    private void initTools() {
         add(new Command(BEZIER_TOOL).action(new Action().press("shift").type("F6").release("shift")));
+
+        Command closePath = new Command(CLOSE_PATH);
+        closePath.command(new Command().action(new Action().mouseMoveRelative(0, 10)));
+        closePath.action(new Action().press("shift").type("enter").release("shift"));
+        add(closePath);
     }
 
     private void add(Command command) {

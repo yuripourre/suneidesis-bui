@@ -45,4 +45,36 @@ public class Action {
         inputs.add(new Input(RUN_COMMAND, command));
         return this;
     }
+
+    public Action mouseMove(int x, int y) {
+        inputs.add(new Input(MOUSE_MOVE, x, y));
+        return this;
+    }
+
+    public Action mousePress(String keyLabel) {
+        InputKey key = InputKey.findByLabel(keyLabel);
+        inputs.add(new Input(MOUSE_PRESSED, key));
+        return this;
+    }
+
+    public Action mousePress(InputKey key) {
+        inputs.add(new Input(MOUSE_PRESSED, key));
+        return this;
+    }
+
+    public Action mouseRelease(String keyLabel) {
+        InputKey key = InputKey.findByLabel(keyLabel);
+        inputs.add(new Input(MOUSE_RELEASED, key));
+        return this;
+    }
+
+    public Action mouseRelease(InputKey key) {
+        inputs.add(new Input(MOUSE_RELEASED, key));
+        return this;
+    }
+
+    public Action mouseMoveRelative(int dx, int dy) {
+        inputs.add(new Input(MOUSE_MOVE_RELATIVE, dx, dy));
+        return this;
+    }
 }

@@ -12,6 +12,7 @@ public abstract class VectorBUI extends BaseBUI {
     public static final String ZOOM_FIT_PAGE = "Zoom Fit Page";
 
     public static final String BEZIER_TOOL = "Bezier Tool";
+    public static final String CLOSE_PATH = "Close Path";
 
     public VectorBUI(BUIEngine engine) {
         super(engine);
@@ -39,5 +40,9 @@ public abstract class VectorBUI extends BaseBUI {
 
     public void bezierTool() {
         execute(commands.get(BEZIER_TOOL));
+    }
+
+    public void closePath() {
+        execute(commands.get(CLOSE_PATH));
     }
 }

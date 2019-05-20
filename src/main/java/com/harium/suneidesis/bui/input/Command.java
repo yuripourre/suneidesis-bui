@@ -30,7 +30,7 @@ public class Command {
     }
 
     public Command command(Command command) {
-        this.commands.add(0, command);
+        this.commands.add(command);
         return this;
     }
 

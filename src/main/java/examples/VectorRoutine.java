@@ -35,4 +35,8 @@ public class VectorRoutine extends Routine {
     public void bezierTool() {
         bui.bezierTool();
     }
+
+    public void closePath() {
+        bui.closePath();
+    }
 }
