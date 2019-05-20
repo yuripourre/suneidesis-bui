@@ -1,7 +1,5 @@
 package com.harium.suneidesis.bui.input;
 
-import com.harium.suneidesis.bui.BUI;
-
 import java.util.ArrayList;
 import java.util.List;
 
@@ -32,22 +30,8 @@ public class Command {
     }
 
     public Command command(Command command) {
-        this.commands.add(command);
+        this.commands.add(0, command);
         return this;
-    }
-
-    public void execute(BUI bui) {
-        if (bui.onCommand(this)) {
-            for (Command command : commands) {
-                command.execute(bui);
-            }
-
-            if (hotkey != null) {
-                bui.execute(hotkey);
-            } else {
-                bui.execute(action);
-            }
-        }
     }
 
     public String description() {
@@ -60,5 +44,9 @@ public class Command {
 
     public Action hotkey() {
         return hotkey;
+    }
+
+    public List<Command> commands() {
+        return commands;
     }
 }

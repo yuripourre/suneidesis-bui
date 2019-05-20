@@ -11,6 +11,10 @@ public class Routine {
     protected BUI bui;
     protected List<Command> commands = new ArrayList<Command>();
 
+    public Routine(BUI bui) {
+        this.bui = bui;
+    }
+
     public Routine command(Command command) {
         this.commands.add(command);
         return this;

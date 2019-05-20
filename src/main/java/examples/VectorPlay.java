@@ -13,8 +13,12 @@ public class VectorPlay {
 
         VectorRoutine routine = new VectorRoutine(inkscape);
         routine.open();
-        routine.delay(5000);
-        routine.close();
+        routine.delay(2600);
+        routine.zoomFitPage();
+        routine.delay(800);
+        routine.bezierTool();
+        routine.delay(3000);
+        //routine.close();
     }
 
 }

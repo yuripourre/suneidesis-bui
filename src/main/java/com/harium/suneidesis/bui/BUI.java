@@ -11,6 +11,8 @@ public interface BUI {
 
     void execute(Action action);
 
+    void execute(Command command);
+
     void open();
 
     void close();

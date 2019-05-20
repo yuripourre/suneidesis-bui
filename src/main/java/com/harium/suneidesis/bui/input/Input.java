@@ -9,6 +9,7 @@ public class Input {
     private int y;
 
     private String command;
+    private long delay;
 
     public Input(InputAction inputAction, InputKey key) {
         this.inputAction = inputAction;
@@ -24,6 +25,11 @@ public class Input {
     public Input(InputAction action, String command) {
         this.inputAction = action;
         this.command = command;
+    }
+
+    public Input(InputAction action, long delay) {
+        this.inputAction = action;
+        this.delay = delay;
     }
 
     public InputAction action() {
@@ -51,4 +57,7 @@ public class Input {
         return command;
     }
 
+    public long delay() {
+        return delay;
+    }
 }

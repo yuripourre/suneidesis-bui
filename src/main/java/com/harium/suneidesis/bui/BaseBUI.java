@@ -11,9 +11,11 @@ import java.util.Map;
 
 public abstract class BaseBUI implements BUI {
 
+    private boolean hotkeyPrefered = true;
+
     public static final String START = "Start";
 
-    private BUIEngine engine;
+    protected BUIEngine engine;
 
     public BaseBUI(BUIEngine engine) {
         this.engine = engine;
@@ -40,11 +42,15 @@ public abstract class BaseBUI implements BUI {
     }
 
     public void execute(Command command) {
-        Action hotkey = command.hotkey();
-        if (hotkey != null) {
-            execute(hotkey);
-        } else {
-            execute(command.action());
+        for (Command c : command.commands()) {
+            execute(c);
+        }
+        if (onCommand(command)) {
+            if (hotkeyPrefered && command.hotkey() != null) {
+                execute(command.hotkey());
+            } else {
+                execute(command.action());
+            }
         }
     }
 }

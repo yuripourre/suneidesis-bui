@@ -3,31 +3,37 @@ package com.harium.suneidesis.bui.input;
 import java.util.ArrayList;
 import java.util.List;
 
-import static com.harium.suneidesis.bui.input.InputAction.PRESS;
-import static com.harium.suneidesis.bui.input.InputAction.RUN_COMMAND;
+import static com.harium.suneidesis.bui.input.InputAction.*;
 
 /**
  * Play to dispatch input commands
  */
 public class Action {
 
-    private int delay = 50;
-
+    private long delay = 100;
     private List<Input> inputs = new ArrayList<Input>();
 
-    /*public void execute() {
-        for (Input input : inputs) {
-            execute(input);
-        }
+    public Action delay(long delay) {
+        inputs.add(new Input(WAIT, delay));
+        return this;
     }
-
-    private void execute(Input input) {
-
-    }*/
 
     public Action press(String keyLabel) {
         InputKey key = InputKey.findByLabel(keyLabel);
         inputs.add(new Input(PRESS, key));
+        return this;
+    }
+
+    public Action release(String keyLabel) {
+        InputKey key = InputKey.findByLabel(keyLabel);
+        inputs.add(new Input(RELEASE, key));
+        return this;
+    }
+
+    public Action type(String command) {
+        press(command);
+        delay(delay);
+        release(command);
         return this;
     }
 

@@ -7,6 +7,8 @@ import java.io.IOException;
 
 public class JavaRobotEngine implements BUIEngine {
 
+    private boolean hotkeyPrefered = true;
+
     Process pr;
     Robot robot;
 
@@ -19,12 +21,17 @@ public class JavaRobotEngine implements BUIEngine {
     }
 
     public void execute(Input input) {
+        System.out.println(input.action());
+
         switch (input.action()) {
             case PRESS:
                 robot.keyPress(input.key());
                 break;
             case RELEASE:
                 robot.keyRelease(input.key());
+                break;
+            case WAIT:
+                robot.delay((int) input.delay());
                 break;
             case MOUSE_MOVE:
                 robot.mouseMove(input.x(), input.y());
@@ -33,7 +40,6 @@ public class JavaRobotEngine implements BUIEngine {
                 execute(input.command());
                 break;
         }
-
     }
 
     private void execute(final String command) {
