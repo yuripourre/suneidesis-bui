@@ -44,7 +44,7 @@ public class JavaRobotEngine implements AALEngine {
     }
 
     public void execute(Input input) {
-        System.out.println(input.action());
+        //System.out.println(input.action());
 
         switch (input.action()) {
             case PRESS:
@@ -60,15 +60,11 @@ public class JavaRobotEngine implements AALEngine {
                 x = input.x();
                 y = input.y();
                 robot.mouseMove(x, y);
-                System.out.println("x: "+x);
-                System.out.println("y: "+y);
                 break;
             case MOUSE_MOVE_RELATIVE:
                 x += input.x();
                 y += input.y();
                 robot.mouseMove(x, y);
-                System.out.println("x: "+x);
-                System.out.println("y: "+y);
                 break;
             case MOUSE_PRESSED:
                 int pkey = mouseKey(input.key());

@@ -21,7 +21,18 @@
             <url>http://www.gnu.org/licenses/lgpl.txt</url>
         </license>
     </licenses>
+    <properties>
+        <javadoc.opts>-Xdoclint:none</javadoc.opts>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <gpg.executable>gpg2</gpg.executable>
+        <jmf.version>2.1.1e</jmf.version>
+    </properties>
     <dependencies>
+        <dependency>
+            <groupId>javax.media</groupId>
+            <artifactId>jmf</artifactId>
+            <version>${jmf.version}</version>
+        </dependency>
         <dependency>
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
@@ -52,11 +63,6 @@
             <url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
         </repository>
     </distributionManagement>
-    <properties>
-        <javadoc.opts>-Xdoclint:none</javadoc.opts>
-        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <gpg.executable>gpg2</gpg.executable>
-    </properties>
     <build>
         <plugins>
             <plugin>

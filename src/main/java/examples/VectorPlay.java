@@ -1,16 +1,31 @@
 package examples;
 
+import com.github.agomezmoron.multimedia.recorder.VideoRecorder;
+import com.github.agomezmoron.multimedia.recorder.configuration.VideoRecorderConfiguration;
 import com.harium.suneidesis.aal.VectorAAL;
 import com.harium.suneidesis.aal.engine.AALEngine;
 import com.harium.suneidesis.aal.engine.JavaRobotEngine;
 import com.harium.suneidesis.aal.inkscape.InkscapeAAL;
 import com.harium.suneidesis.aal.input.InputKey;
+import sun.security.provider.certpath.CertPathHelper;
+
+import java.io.File;
+import java.net.MalformedURLException;
 
 public class VectorPlay {
 
     public static void main(String[] args) {
         AALEngine engine = new JavaRobotEngine();
         VectorAAL inkscape = new InkscapeAAL(engine);
+
+        String outputPath = System.getProperty("user.dir");
+        System.out.println(outputPath);
+
+        /*VideoRecorderConfiguration.setCaptureInterval(5);
+        VideoRecorderConfiguration.setVideoDirectory(new File(outputPath));
+        VideoRecorderConfiguration.setKeepFrames(true);
+        VideoRecorderConfiguration.setTempDirectory(new File(outputPath+"/tmp"));
+        VideoRecorder.start("inkscape");*/
 
         VectorRoutine routine = new VectorRoutine(inkscape);
         routine.open();
@@ -50,6 +65,12 @@ public class VectorPlay {
 
         routine.delay(2500);
         routine.close();
+
+        /*try {
+            VideoRecorder.stop();
+        } catch (MalformedURLException e) {
+            e.printStackTrace();
+        }*/
     }
 
 }
