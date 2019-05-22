@@ -1,4 +1,4 @@
-package com.harium.suneidesis.bui.input;
+package com.harium.suneidesis.aal.input;
 
 import java.util.ArrayList;
 import java.util.List;

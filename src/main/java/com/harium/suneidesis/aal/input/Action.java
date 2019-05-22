@@ -1,9 +1,9 @@
-package com.harium.suneidesis.bui.input;
+package com.harium.suneidesis.aal.input;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import static com.harium.suneidesis.bui.input.InputAction.*;
+import static com.harium.suneidesis.aal.input.InputAction.*;
 
 /**
  * Play to dispatch input commands
@@ -24,8 +24,18 @@ public class Action {
         return this;
     }
 
+    public Action press(InputKey key) {
+        inputs.add(new Input(PRESS, key));
+        return this;
+    }
+
     public Action release(String keyLabel) {
         InputKey key = InputKey.findByLabel(keyLabel);
+        inputs.add(new Input(RELEASE, key));
+        return this;
+    }
+
+    public Action release(InputKey key) {
         inputs.add(new Input(RELEASE, key));
         return this;
     }
@@ -34,6 +44,13 @@ public class Action {
         press(command);
         delay(delay);
         release(command);
+        return this;
+    }
+
+    public Action type(InputKey key) {
+        press(key);
+        delay(delay);
+        release(key);
         return this;
     }
 
@@ -77,4 +94,5 @@ public class Action {
         inputs.add(new Input(MOUSE_MOVE_RELATIVE, dx, dy));
         return this;
     }
+
 }

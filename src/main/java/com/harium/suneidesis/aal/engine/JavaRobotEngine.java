@@ -1,15 +1,15 @@
-package com.harium.suneidesis.bui.engine;
+package com.harium.suneidesis.aal.engine;
 
-import com.harium.suneidesis.bui.input.Input;
+import com.harium.suneidesis.aal.input.Input;
 
 import java.awt.*;
 import java.awt.event.InputEvent;
 import java.io.IOException;
 
-import static com.harium.suneidesis.bui.input.InputKey.MOUSE_MIDDLE;
-import static com.harium.suneidesis.bui.input.InputKey.MOUSE_RIGHT;
+import static com.harium.suneidesis.aal.input.InputKey.MOUSE_MIDDLE;
+import static com.harium.suneidesis.aal.input.InputKey.MOUSE_RIGHT;
 
-public class JavaRobotEngine implements BUIEngine {
+public class JavaRobotEngine implements AALEngine {
 
     int width, height;
     int x, y;
@@ -60,11 +60,15 @@ public class JavaRobotEngine implements BUIEngine {
                 x = input.x();
                 y = input.y();
                 robot.mouseMove(x, y);
+                System.out.println("x: "+x);
+                System.out.println("y: "+y);
                 break;
             case MOUSE_MOVE_RELATIVE:
                 x += input.x();
                 y += input.y();
                 robot.mouseMove(x, y);
+                System.out.println("x: "+x);
+                System.out.println("y: "+y);
                 break;
             case MOUSE_PRESSED:
                 int pkey = mouseKey(input.key());

@@ -1,8 +1,8 @@
-package com.harium.suneidesis.bui;
+package com.harium.suneidesis.aal;
 
-import com.harium.suneidesis.bui.engine.BUIEngine;
+import com.harium.suneidesis.aal.engine.AALEngine;
 
-public abstract class VectorBUI extends BaseBUI {
+public abstract class VectorAAL extends EditorAAL {
 
     public static final String ZOOM_MODE = "Zoom Mode";
     public static final String ZOOM_IN = "Zoom In";
@@ -14,7 +14,7 @@ public abstract class VectorBUI extends BaseBUI {
     public static final String BEZIER_TOOL = "Bezier Tool";
     public static final String CLOSE_PATH = "Close Path";
 
-    public VectorBUI(BUIEngine engine) {
+    public VectorAAL(AALEngine engine) {
         super(engine);
     }
 

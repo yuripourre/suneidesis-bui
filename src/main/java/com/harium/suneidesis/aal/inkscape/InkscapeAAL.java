@@ -1,15 +1,15 @@
-package com.harium.suneidesis.bui.inkscape;
+package com.harium.suneidesis.aal.inkscape;
 
-import com.harium.suneidesis.bui.VectorBUI;
-import com.harium.suneidesis.bui.engine.BUIEngine;
-import com.harium.suneidesis.bui.input.Action;
-import com.harium.suneidesis.bui.input.Command;
+import com.harium.suneidesis.aal.VectorAAL;
+import com.harium.suneidesis.aal.engine.AALEngine;
+import com.harium.suneidesis.aal.input.Action;
+import com.harium.suneidesis.aal.input.Command;
 
-public class InkscapeBUI extends VectorBUI {
+public class InkscapeAAL extends VectorAAL {
 
     private boolean zoomMode = false;
 
-    public InkscapeBUI(BUIEngine engine) {
+    public InkscapeAAL(AALEngine engine) {
         super(engine);
         init();
     }

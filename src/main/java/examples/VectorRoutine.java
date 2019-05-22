@@ -1,13 +1,13 @@
 package examples;
 
-import com.harium.suneidesis.bui.VectorBUI;
-import com.harium.suneidesis.bui.routine.Routine;
+import com.harium.suneidesis.aal.VectorAAL;
+import com.harium.suneidesis.aal.routine.Routine;
 
 public class VectorRoutine extends Routine {
 
-    private VectorBUI bui;
+    private VectorAAL bui;
 
-    public VectorRoutine(VectorBUI bui) {
+    public VectorRoutine(VectorAAL bui) {
         super(bui);
         this.bui = bui;
     }

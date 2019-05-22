@@ -1,8 +1,8 @@
-package com.harium.suneidesis.bui.engine;
+package com.harium.suneidesis.aal.engine;
 
-import com.harium.suneidesis.bui.input.Input;
+import com.harium.suneidesis.aal.input.Input;
 
-public interface BUIEngine {
+public interface AALEngine {
 
     void execute(Input input);
 

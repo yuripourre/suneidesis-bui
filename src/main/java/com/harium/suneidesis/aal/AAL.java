@@ -1,9 +1,9 @@
-package com.harium.suneidesis.bui;
+package com.harium.suneidesis.aal;
 
-import com.harium.suneidesis.bui.input.Action;
-import com.harium.suneidesis.bui.input.Command;
+import com.harium.suneidesis.aal.input.Action;
+import com.harium.suneidesis.aal.input.Command;
 
-public interface BUI {
+public interface AAL {
 
     void onAction(Action action);
 

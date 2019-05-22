@@ -4,16 +4,16 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <groupId>com.harium.suneidesis</groupId>
-    <artifactId>bui</artifactId>
+    <artifactId>aal</artifactId>
     <version>1.0.0</version>
     <packaging>jar</packaging>
-    <name>Suneidesis Bot User Interface</name>
-    <description>A Bot User Interface</description>
-    <url>http://github.com/harium/suneidesis-bui</url>
+    <name>Suneidesis Accessibility Abstraction Interface</name>
+    <description>An Accessibility Abstraction Interface</description>
+    <url>http://github.com/harium/suneidesis-aal</url>
     <scm>
-        <connection>scm:git:git://github.com/harium/suneidesis-bui.git</connection>
-        <developerConnection>scm:git:ssh://github.com:harium/suneidesis-bui.git</developerConnection>
-        <url>http://github.com/harium/suneidesis-bui/tree/master</url>
+        <connection>scm:git:git://github.com/harium/suneidesis-aal.git</connection>
+        <developerConnection>scm:git:ssh://github.com:harium/suneidesis-aal.git</developerConnection>
+        <url>http://github.com/harium/suneidesis-aal/tree/master</url>
     </scm>
     <licenses>
         <license>

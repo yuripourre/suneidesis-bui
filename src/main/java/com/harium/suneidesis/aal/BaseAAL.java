@@ -1,23 +1,23 @@
-package com.harium.suneidesis.bui;
+package com.harium.suneidesis.aal;
 
-import com.harium.suneidesis.bui.engine.BUIEngine;
-import com.harium.suneidesis.bui.input.Action;
-import com.harium.suneidesis.bui.input.Command;
-import com.harium.suneidesis.bui.input.Input;
+import com.harium.suneidesis.aal.engine.AALEngine;
+import com.harium.suneidesis.aal.input.Action;
+import com.harium.suneidesis.aal.input.Command;
+import com.harium.suneidesis.aal.input.Input;
 
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-public abstract class BaseBUI implements BUI {
+public abstract class BaseAAL implements AAL {
 
     private boolean hotkeyPrefered = true;
 
     public static final String START = "Start";
 
-    protected BUIEngine engine;
+    protected AALEngine engine;
 
-    public BaseBUI(BUIEngine engine) {
+    public BaseAAL(AALEngine engine) {
         this.engine = engine;
     }
 

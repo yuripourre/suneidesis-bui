@@ -1,13 +1,13 @@
 package examples;
 
-import com.harium.suneidesis.bui.engine.BUIEngine;
-import com.harium.suneidesis.bui.engine.JavaRobotEngine;
-import com.harium.suneidesis.bui.input.Input;
-import com.harium.suneidesis.bui.input.InputAction;
+import com.harium.suneidesis.aal.engine.AALEngine;
+import com.harium.suneidesis.aal.engine.JavaRobotEngine;
+import com.harium.suneidesis.aal.input.Input;
+import com.harium.suneidesis.aal.input.InputAction;
 
 public class MoveExample {
 
-    private static BUIEngine engine;
+    private static AALEngine engine;
 
     public static void main(String[] args) {
         engine = new JavaRobotEngine();
