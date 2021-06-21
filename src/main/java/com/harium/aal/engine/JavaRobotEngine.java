@@ -1,13 +1,11 @@
-package com.harium.suneidesis.aal.engine;
+package com.harium.aal.engine;
 
-import com.harium.suneidesis.aal.input.Input;
+import com.harium.aal.input.InputKey;
+import com.harium.aal.input.Input;
 
 import java.awt.*;
 import java.awt.event.InputEvent;
 import java.io.IOException;
-
-import static com.harium.suneidesis.aal.input.InputKey.MOUSE_MIDDLE;
-import static com.harium.suneidesis.aal.input.InputKey.MOUSE_RIGHT;
 
 public class JavaRobotEngine implements AALEngine {
 
@@ -85,9 +83,9 @@ public class JavaRobotEngine implements AALEngine {
     }
 
     private int mouseKey(int key) {
-        if (key == MOUSE_RIGHT.code()) {
+        if (key == InputKey.MOUSE_RIGHT.code()) {
             return InputEvent.BUTTON2_MASK;
-        } else if (key == MOUSE_MIDDLE.code()) {
+        } else if (key == InputKey.MOUSE_MIDDLE.code()) {
             return InputEvent.BUTTON3_MASK;
         }
 

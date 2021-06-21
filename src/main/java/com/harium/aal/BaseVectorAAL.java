@@ -1,8 +1,8 @@
-package com.harium.suneidesis.aal;
+package com.harium.aal;
 
-import com.harium.suneidesis.aal.engine.AALEngine;
+import com.harium.aal.engine.AALEngine;
 
-public abstract class VectorAAL extends EditorAAL {
+public abstract class BaseVectorAAL extends BaseEditorAAL implements VectorEditorAAL {
 
     public static final String ZOOM_MODE = "Zoom Mode";
     public static final String ZOOM_IN = "Zoom In";
@@ -14,7 +14,7 @@ public abstract class VectorAAL extends EditorAAL {
     public static final String BEZIER_TOOL = "Bezier Tool";
     public static final String CLOSE_PATH = "Close Path";
 
-    public VectorAAL(AALEngine engine) {
+    public BaseVectorAAL(AALEngine engine) {
         super(engine);
     }
 

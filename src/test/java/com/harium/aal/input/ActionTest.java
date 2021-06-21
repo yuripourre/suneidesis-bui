@@ -1,4 +1,4 @@
-package com.harium.suneidesis.aal.input;
+package com.harium.aal.input;
 
 import org.junit.Assert;
 import org.junit.Test;

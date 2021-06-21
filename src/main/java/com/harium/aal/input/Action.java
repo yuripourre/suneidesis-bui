@@ -1,9 +1,9 @@
-package com.harium.suneidesis.aal.input;
+package com.harium.aal.input;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import static com.harium.suneidesis.aal.input.InputAction.*;
+import static com.harium.aal.input.InputAction.*;
 
 /**
  * Play to dispatch input commands

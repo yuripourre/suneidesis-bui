@@ -1,11 +1,11 @@
-package com.harium.suneidesis.aal.inkscape;
+package com.harium.aal.inkscape;
 
-import com.harium.suneidesis.aal.VectorAAL;
-import com.harium.suneidesis.aal.engine.AALEngine;
-import com.harium.suneidesis.aal.input.Action;
-import com.harium.suneidesis.aal.input.Command;
+import com.harium.aal.BaseVectorAAL;
+import com.harium.aal.engine.AALEngine;
+import com.harium.aal.input.Action;
+import com.harium.aal.input.Command;
 
-public class InkscapeAAL extends VectorAAL {
+public class InkscapeAAL extends BaseVectorAAL {
 
     private boolean zoomMode = false;
 
@@ -69,4 +69,13 @@ public class InkscapeAAL extends VectorAAL {
         return true;
     }
 
+    @Override
+    public void copy() {
+
+    }
+
+    @Override
+    public void paste() {
+
+    }
 }

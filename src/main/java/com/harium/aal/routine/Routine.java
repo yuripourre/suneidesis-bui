@@ -1,9 +1,9 @@
-package com.harium.suneidesis.aal.routine;
+package com.harium.aal.routine;
 
-import com.harium.suneidesis.aal.AAL;
-import com.harium.suneidesis.aal.input.Action;
-import com.harium.suneidesis.aal.input.Command;
-import com.harium.suneidesis.aal.input.InputKey;
+import com.harium.aal.AAL;
+import com.harium.aal.input.Action;
+import com.harium.aal.input.Command;
+import com.harium.aal.input.InputKey;
 
 import java.util.ArrayList;
 import java.util.List;

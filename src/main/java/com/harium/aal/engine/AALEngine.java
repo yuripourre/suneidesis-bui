@@ -1,6 +1,6 @@
-package com.harium.suneidesis.aal.engine;
+package com.harium.aal.engine;
 
-import com.harium.suneidesis.aal.input.Input;
+import com.harium.aal.input.Input;
 
 public interface AALEngine {
 

@@ -1,18 +1,18 @@
 package examples;
 
-import com.harium.suneidesis.aal.VectorAAL;
-import com.harium.suneidesis.aal.engine.AALEngine;
-import com.harium.suneidesis.aal.engine.JavaRobotEngine;
-import com.harium.suneidesis.aal.inkscape.InkscapeAAL;
-import com.harium.suneidesis.aal.input.InputKey;
+import com.harium.aal.BaseVectorAAL;
+import com.harium.aal.engine.AALEngine;
+import com.harium.aal.engine.JavaRobotEngine;
+import com.harium.aal.inkscape.InkscapeAAL;
+import com.harium.aal.input.InputKey;
 
 public class VectorPlay {
 
     public static void main(String[] args) {
         AALEngine engine = new JavaRobotEngine();
-        VectorAAL inkscape = new InkscapeAAL(engine);
+        BaseVectorAAL inkscape = new InkscapeAAL(engine);
 
-        VectorRoutine routine = new VectorRoutine(inkscape);
+        VectorEditor routine = new VectorEditor(inkscape);
         routine.open();
         routine.delay(2600);
         routine.zoomFitPage();

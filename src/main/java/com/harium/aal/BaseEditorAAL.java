@@ -1,17 +1,17 @@
-package com.harium.suneidesis.aal;
+package com.harium.aal;
 
-import com.harium.suneidesis.aal.engine.AALEngine;
-import com.harium.suneidesis.aal.input.Action;
-import com.harium.suneidesis.aal.input.Command;
-import com.harium.suneidesis.aal.input.InputKey;
+import com.harium.aal.input.Action;
+import com.harium.aal.input.InputKey;
+import com.harium.aal.engine.AALEngine;
+import com.harium.aal.input.Command;
 
-public abstract class EditorAAL extends BaseAAL {
+public abstract class BaseEditorAAL extends BaseAAL implements Editor {
 
     public static final String COPY = "copy";
     public static final String PASTE = "paste";
     public static final String UNDO = "undo";
 
-    public EditorAAL(AALEngine engine) {
+    public BaseEditorAAL(AALEngine engine) {
         super(engine);
         initCommands();
     }
@@ -27,5 +27,12 @@ public abstract class EditorAAL extends BaseAAL {
         commands.put(PASTE, undo);
     }
 
+    public void copy() {
+        execute(commands.get(COPY));
+    }
+
+    public void paste() {
+        execute(commands.get(PASTE));
+    }
 
 }

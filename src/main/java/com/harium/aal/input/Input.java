@@ -1,4 +1,4 @@
-package com.harium.suneidesis.aal.input;
+package com.harium.aal.input;
 
 public class Input {
 

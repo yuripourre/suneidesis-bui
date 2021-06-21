@@ -1,9 +1,9 @@
 package examples;
 
-import com.harium.suneidesis.aal.engine.AALEngine;
-import com.harium.suneidesis.aal.engine.JavaRobotEngine;
-import com.harium.suneidesis.aal.input.Input;
-import com.harium.suneidesis.aal.input.InputAction;
+import com.harium.aal.engine.AALEngine;
+import com.harium.aal.engine.JavaRobotEngine;
+import com.harium.aal.input.Input;
+import com.harium.aal.input.InputAction;
 
 public class MoveExample {
 
