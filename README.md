@@ -1,5 +1,5 @@
-# suneidesis-aal
-Accessibility Abstraction Layer (BAL)
+# AAL
+Accessibility Abstraction Layer (AAL)
 
 An alternative way to integrate high-level actions with software.
 
