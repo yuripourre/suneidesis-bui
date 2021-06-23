@@ -1,5 +1,6 @@
 package com.harium.aal.input;
 
+import java.awt.event.InputEvent;
 import java.awt.event.KeyEvent;
 
 public enum InputKey {
@@ -35,9 +36,10 @@ public enum InputKey {
     ALT("alt", KeyEvent.VK_ALT),
     CTRL("ctrl", KeyEvent.VK_CONTROL),
     SHIFT("shift", KeyEvent.VK_SHIFT),
-    MOUSE_LEFT("mouse left", 10001),
-    MOUSE_RIGHT("mouse right", 10002),
-    MOUSE_MIDDLE("mouse middle", 10003),
+    SPACE("space", KeyEvent.VK_SPACE),
+    MOUSE_LEFT("mouse left", InputEvent.BUTTON1_DOWN_MASK),
+    MOUSE_RIGHT("mouse right", InputEvent.BUTTON2_DOWN_MASK),
+    MOUSE_MIDDLE("mouse middle", InputEvent.BUTTON3_DOWN_MASK),
     ENTER("enter", KeyEvent.VK_ENTER),
     KEY_1("1", KeyEvent.VK_1),
     KEY_2("2", KeyEvent.VK_2),

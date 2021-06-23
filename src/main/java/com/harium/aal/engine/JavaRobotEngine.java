@@ -1,7 +1,6 @@
 package com.harium.aal.engine;
 
 import com.harium.aal.input.InputKey;
-import com.harium.aal.input.Input;
 
 import java.awt.*;
 import java.awt.event.InputEvent;
@@ -10,38 +9,30 @@ import java.io.IOException;
 public class JavaRobotEngine implements AALEngine {
 
     int width, height;
-    int x, y;
+    int mouseX, mouseY;
 
-    Process pr;
     Robot robot;
 
     public JavaRobotEngine() {
         init();
-        initRobot();
-    }
-
-    private void initRobot() {
-        try {
-            robot = new Robot();
-            setup(robot);
-        } catch (AWTException e) {
-            e.printStackTrace();
-        }
     }
 
     private void init() {
         Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
         width = screenSize.width;
         height = screenSize.height;
+        initRobot();
     }
 
-    private static void setup(Robot robot) {
-        robot.setAutoWaitForIdle(true);
-        robot.delay(150);
-        robot.waitForIdle();
+    private void initRobot() {
+        try {
+            robot = new Robot();
+        } catch (AWTException e) {
+            e.printStackTrace();
+        }
     }
 
-    public void execute(Input input) {
+    /*public void execute(Input input) {
         System.out.println(input.action());
 
         switch (input.action()) {
@@ -80,7 +71,7 @@ public class JavaRobotEngine implements AALEngine {
                 execute(input.command());
                 break;
         }
-    }
+    }*/
 
     private int mouseKey(int key) {
         if (key == InputKey.MOUSE_RIGHT.code()) {
@@ -92,32 +83,25 @@ public class JavaRobotEngine implements AALEngine {
         return InputEvent.BUTTON1_MASK;
     }
 
-    private void execute(final String command) {
-        new Thread(new Runnable() {
-            public void run() {
-                Runtime rt = Runtime.getRuntime();
-                try {
-                    pr = rt.exec(command);
-                    pr.waitFor();
-                } catch (IOException e) {
-                    e.printStackTrace();
-                } catch (InterruptedException e) {
-                    e.printStackTrace();
-                }
-            }
-        }).start();
+    public Process run(final String ... command) {
+        Runtime rt = Runtime.getRuntime();
+        try {
+            Process process = rt.exec(command);
+            process.waitFor();
+            return process;
+        } catch (IOException | InterruptedException e) {
+            e.printStackTrace();
+        }
+
+        return null;
     }
 
-    public void close() {
-        pr.destroy();
+    public int getMouseX() {
+        return mouseX;
     }
 
-    public int getX() {
-        return x;
-    }
-
-    public int getY() {
-        return y;
+    public int getMouseY() {
+        return mouseY;
     }
 
     @Override
@@ -128,5 +112,51 @@ public class JavaRobotEngine implements AALEngine {
     @Override
     public int getHeight() {
         return height;
+    }
+
+    @Override
+    public void typeKey(InputKey key) {
+        pressKey(key);
+        delay(100);
+        releaseKey(key);
+    }
+
+    @Override
+    public void delay(int ms) {
+        robot.delay(ms);
+    }
+
+    @Override
+    public void mouseMove(int x, int y) {
+        this.mouseX = x;
+        this.mouseY = y;
+        robot.mouseMove(mouseX, mouseY);
+    }
+
+    @Override
+    public void mouseMoveRelative(int x, int y) {
+        this.mouseX += x;
+        this.mouseY += y;
+        robot.mouseMove(mouseX, mouseY);
+    }
+
+    @Override
+    public void mousePress(InputKey mouseKey) {
+        robot.mousePress(mouseKey.code());
+    }
+
+    @Override
+    public void mouseRelease(InputKey mouseLeft) {
+        robot.mouseRelease(mouseLeft.code());
+    }
+
+    @Override
+    public void pressKey(InputKey key) {
+        robot.keyPress(key.code());
+    }
+
+    @Override
+    public void releaseKey(InputKey key) {
+        robot.keyRelease(key.code());
     }
 }

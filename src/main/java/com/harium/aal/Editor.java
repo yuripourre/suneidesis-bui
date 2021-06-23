@@ -6,4 +6,6 @@ public interface Editor {
 
     void paste();
 
+    void undo();
+
 }

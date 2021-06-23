@@ -1,16 +1,30 @@
 package com.harium.aal.engine;
 
-import com.harium.aal.input.Input;
+import com.harium.aal.input.InputKey;
 
 public interface AALEngine {
 
-    void execute(Input input);
+    void typeKey(InputKey key);
 
-    void close();
+    void pressKey(InputKey key);
 
-    int getX();
+    void releaseKey(InputKey key);
 
-    int getY();
+    void delay(int ms);
+
+    void mouseMove(int x, int y);
+
+    void mouseMoveRelative(int i, int i1);
+
+    void mousePress(InputKey mouseLeft);
+
+    void mouseRelease(InputKey mouseLeft);
+
+    Process run(String ... command);
+
+    int getMouseX();
+
+    int getMouseY();
 
     int getWidth();
 

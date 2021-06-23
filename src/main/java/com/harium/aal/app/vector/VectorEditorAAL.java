@@ -1,4 +1,4 @@
-package com.harium.aal;
+package com.harium.aal.app.vector;
 
 public interface VectorEditorAAL {
 
