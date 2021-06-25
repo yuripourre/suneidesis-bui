@@ -32,47 +32,6 @@ public class JavaRobotEngine implements AALEngine {
         }
     }
 
-    /*public void execute(Input input) {
-        System.out.println(input.action());
-
-        switch (input.action()) {
-            case PRESS:
-                robot.keyPress(input.key());
-                break;
-            case RELEASE:
-                robot.keyRelease(input.key());
-                break;
-            case WAIT:
-                robot.delay((int) input.delay());
-                break;
-            case MOUSE_MOVE:
-                x = input.x();
-                y = input.y();
-                robot.mouseMove(x, y);
-                System.out.println("x: "+x);
-                System.out.println("y: "+y);
-                break;
-            case MOUSE_MOVE_RELATIVE:
-                x += input.x();
-                y += input.y();
-                robot.mouseMove(x, y);
-                System.out.println("x: "+x);
-                System.out.println("y: "+y);
-                break;
-            case MOUSE_PRESSED:
-                int pkey = mouseKey(input.key());
-                robot.mousePress(pkey);
-                break;
-            case MOUSE_RELEASED:
-                int rkey = mouseKey(input.key());
-                robot.mouseRelease(rkey);
-                break;
-            case RUN_COMMAND:
-                execute(input.command());
-                break;
-        }
-    }*/
-
     private int mouseKey(int key) {
         if (key == InputKey.MOUSE_RIGHT.code()) {
             return InputEvent.BUTTON2_MASK;
@@ -84,9 +43,10 @@ public class JavaRobotEngine implements AALEngine {
     }
 
     public Process run(final String ... command) {
-        Runtime rt = Runtime.getRuntime();
+
         try {
-            Process process = rt.exec(command);
+            ProcessBuilder processBuilder = new ProcessBuilder().command(command).redirectErrorStream(true);
+            Process process = processBuilder.start();
             process.waitFor();
             return process;
         } catch (IOException | InterruptedException e) {
@@ -112,6 +72,12 @@ public class JavaRobotEngine implements AALEngine {
     @Override
     public int getHeight() {
         return height;
+    }
+
+    @Override
+    public void typeKey(String keyLabel) {
+        InputKey key = InputKey.findByLabel(keyLabel);
+        typeKey(key);
     }
 
     @Override

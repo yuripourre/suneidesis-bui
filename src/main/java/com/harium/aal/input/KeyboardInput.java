@@ -2,7 +2,7 @@ package com.harium.aal.input;
 
 public interface KeyboardInput {
 
-    void typeKey(String keyChar);
+    void typeKey(String keyLabel);
 
     void typeKey(InputKey keyCode);
 
