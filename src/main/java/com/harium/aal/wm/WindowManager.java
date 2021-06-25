@@ -4,6 +4,14 @@ import java.util.List;
 
 public interface WindowManager {
 
-    List<Window> getWindows();
+    List<Window> listWindows();
+
+    void activateWindow(Window window);
+
+    void closeWindow(Window window);
+
+    void restart();
+
+    void shutdown();
 
 }

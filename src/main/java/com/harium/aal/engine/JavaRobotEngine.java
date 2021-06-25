@@ -4,7 +4,10 @@ import com.harium.aal.input.InputKey;
 
 import java.awt.*;
 import java.awt.event.InputEvent;
+import java.io.BufferedReader;
 import java.io.IOException;
+import java.io.InputStreamReader;
+import java.util.Collections;
 
 public class JavaRobotEngine implements AALEngine {
 
@@ -54,6 +57,28 @@ public class JavaRobotEngine implements AALEngine {
         }
 
         return null;
+    }
+
+    @Override
+    public String runOutput(String... command) {
+        Process process = run(command);
+        BufferedReader stdInput = new BufferedReader(new InputStreamReader(process.getInputStream()));
+
+        // Read the output from the command
+        StringBuilder builder = new StringBuilder();
+        String s = null;
+        while (true) {
+            try {
+                if ((s = stdInput.readLine()) == null) {
+                    break;
+                }
+            } catch (IOException e) {
+                e.printStackTrace();
+                return "";
+            }
+            builder.append(s);
+        }
+        return builder.toString();
     }
 
     public int getMouseX() {

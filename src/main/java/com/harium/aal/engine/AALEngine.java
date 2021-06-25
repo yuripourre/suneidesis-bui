@@ -9,6 +9,8 @@ public interface AALEngine extends KeyboardInput, MouseInput {
 
     Process run(String ... command);
 
+    String runOutput(String ... command);
+
     int getWidth();
 
     int getHeight();
