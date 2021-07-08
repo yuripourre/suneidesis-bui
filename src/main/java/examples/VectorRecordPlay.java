@@ -1,9 +1,9 @@
 package examples;
 
 import com.harium.aal.app.vector.InkscapeAAL;
-import com.harium.aal.engine.AALEngine;
-import com.harium.aal.engine.JavaRobotEngine;
-import com.harium.aal.input.InputKey;
+import com.harium.aal.core.engine.AALEngine;
+import com.harium.aal.core.engine.JavaRobotEngine;
+import com.harium.aal.core.input.InputKey;
 
 public class VectorRecordPlay {
 

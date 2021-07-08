@@ -1,8 +1,8 @@
 package com.harium.aal.app.vector;
 
 import com.harium.aal.BaseEditorApp;
-import com.harium.aal.engine.AALEngine;
-import com.harium.aal.input.InputKey;
+import com.harium.aal.core.engine.AALEngine;
+import com.harium.aal.core.input.InputKey;
 
 public class InkscapeAAL extends BaseEditorApp implements VectorEditorAAL {
 

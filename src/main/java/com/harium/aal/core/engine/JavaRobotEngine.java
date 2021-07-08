@@ -1,13 +1,12 @@
-package com.harium.aal.engine;
+package com.harium.aal.core.engine;
 
-import com.harium.aal.input.InputKey;
+import com.harium.aal.core.input.InputKey;
 
 import java.awt.*;
 import java.awt.event.InputEvent;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.util.Collections;
 
 public class JavaRobotEngine implements AALEngine {
 

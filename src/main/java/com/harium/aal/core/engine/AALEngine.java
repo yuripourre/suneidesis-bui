@@ -1,7 +1,7 @@
-package com.harium.aal.engine;
+package com.harium.aal.core.engine;
 
-import com.harium.aal.input.KeyboardInput;
-import com.harium.aal.input.MouseInput;
+import com.harium.aal.core.input.KeyboardInput;
+import com.harium.aal.core.input.MouseInput;
 
 public interface AALEngine extends KeyboardInput, MouseInput {
 

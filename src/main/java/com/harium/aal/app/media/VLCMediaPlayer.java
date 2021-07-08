@@ -1,8 +1,8 @@
 package com.harium.aal.app.media;
 
 import com.harium.aal.BaseApp;
-import com.harium.aal.engine.AALEngine;
-import com.harium.aal.input.InputKey;
+import com.harium.aal.core.engine.AALEngine;
+import com.harium.aal.core.input.InputKey;
 
 public class VLCMediaPlayer extends BaseApp implements MediaPlayer {
 

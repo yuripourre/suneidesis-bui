@@ -28,6 +28,11 @@
             <version>2.11.1</version>
         </dependency>
         <dependency>
+            <groupId>com.wizzardo</groupId>
+            <artifactId>http</artifactId>
+            <version>0.4</version>
+        </dependency>
+        <dependency>
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
             <version>4.12</version>

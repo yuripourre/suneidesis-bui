@@ -1,4 +1,4 @@
-package com.harium.aal.input;
+package com.harium.aal.core.input;
 
 public interface KeyboardInput {
 

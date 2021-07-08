@@ -2,7 +2,7 @@ package examples;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.harium.aal.engine.JavaRobotEngine;
+import com.harium.aal.core.engine.JavaRobotEngine;
 import com.harium.aal.wm.GnomeManager;
 import com.harium.aal.wm.Window;
 

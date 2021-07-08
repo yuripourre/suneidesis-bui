@@ -3,7 +3,7 @@ package com.harium.aal.wm;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.harium.aal.engine.AALEngine;
+import com.harium.aal.core.engine.AALEngine;
 
 import java.util.ArrayList;
 import java.util.Collections;

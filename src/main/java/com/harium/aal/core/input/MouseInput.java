@@ -1,4 +1,4 @@
-package com.harium.aal.input;
+package com.harium.aal.core.input;
 
 public interface MouseInput {
 
@@ -8,7 +8,7 @@ public interface MouseInput {
 
     void mouseMove(int x, int y);
 
-    void mouseMoveRelative(int i, int i1);
+    void mouseMoveRelative(int dx, int dy);
 
     void mousePress(InputKey mouseLeft);
 

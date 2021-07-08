@@ -1,7 +1,7 @@
 package com.harium.aal;
 
-import com.harium.aal.engine.AALEngine;
-import com.harium.aal.input.InputKey;
+import com.harium.aal.core.engine.AALEngine;
+import com.harium.aal.core.input.InputKey;
 
 public abstract class BaseApp implements App {
 
